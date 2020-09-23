@@ -5,7 +5,11 @@ public class Arg {
     private String value;
     private String type;
     public Arg(String flag,String value,Schema schema){
-            this.type = schema.getTypeOf(flag);
+        if(value == null){
+            this.value = schema.getDefaultValueOf(value).toString();
+        }
+        this.type = schema.getTypeOf(flag);
+
     }
     public Object parseValue(){
        if(value.equals(ValueType.BOOLEAN.getType())){

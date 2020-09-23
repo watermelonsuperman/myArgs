@@ -23,7 +23,7 @@ public class Schema {
         Object value = null;
         for(FlagSchema flagSchema : flagSchemas){
             if(flagSchema.getFlag().equals(flag)){
-                value = flagSchema.getValueType().getDefaultValue();
+                value = flagSchema.getDefaultValue();
             }else{
                 value = "没有对应的默认值";
             }
